@@ -1,0 +1,248 @@
+/**
+ * Parish FAQ Styles
+ */
+
+.parish-faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.parish-faq-accordion {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.parish-faq-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.parish-faq-item:last-child {
+    border-bottom: none;
+}
+
+.parish-faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px 20px;
+    background: #fff;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    transition: background-color 0.2s ease;
+}
+
+.parish-faq-question:hover {
+    background-color: #f8f9fa;
+}
+
+.parish-faq-question:focus {
+    outline: 2px solid #0073aa;
+    outline-offset: -2px;
+}
+
+.parish-faq-question[aria-expanded="true"] {
+    background-color: #f0f6fc;
+}
+
+.parish-faq-question-text {
+    flex: 1;
+    padding-right: 16px;
+}
+
+.parish-faq-toggle {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    position: relative;
+}
+
+.parish-faq-toggle::before,
+.parish-faq-toggle::after {
+    content: '';
+    position: absolute;
+    background-color: #666;
+    transition: transform 0.2s ease;
+}
+
+.parish-faq-toggle::before {
+    width: 12px;
+    height: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.parish-faq-toggle::after {
+    width: 2px;
+    height: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.parish-faq-question[aria-expanded="true"] .parish-faq-toggle::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.parish-faq-answer {
+    padding: 20px;
+    background: #fff;
+    color: #555;
+    line-height: 1.6;
+}
+
+.parish-faq-answer[hidden] {
+    display: none;
+}
+
+.parish-faq-answer p:first-child {
+    margin-top: 0;
+}
+
+.parish-faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+.parish-faq-answer a {
+    color: #0073aa;
+}
+
+.parish-faq-answer a:hover {
+    text-decoration: underline;
+}
+
+.parish-faq-no-results {
+    text-align: center;
+    color: #666;
+    padding: 40px 20px;
+    font-style: italic;
+}
+
+/* Pagination Controls */
+.parish-faq-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.parish-faq-per-page {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.parish-faq-per-page label {
+    color: #555;
+    font-weight: 500;
+}
+
+.parish-faq-per-page-select {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.parish-faq-page-info {
+    color: #666;
+}
+
+.parish-faq-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 16px 0;
+}
+
+.parish-faq-page-btn {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.parish-faq-page-btn:hover:not(:disabled) {
+    background: #f0f6fc;
+    border-color: #0073aa;
+}
+
+.parish-faq-page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.parish-faq-page-numbers {
+    display: flex;
+    gap: 4px;
+}
+
+.parish-faq-page-num {
+    min-width: 36px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.parish-faq-page-num:hover {
+    background: #f0f6fc;
+    border-color: #0073aa;
+}
+
+.parish-faq-page-num.active {
+    background: #0073aa;
+    border-color: #0073aa;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .parish-faq-question {
+        padding: 14px 16px;
+        font-size: 15px;
+    }
+
+    .parish-faq-answer {
+        padding: 16px;
+    }
+
+    .parish-faq-controls {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .parish-faq-pagination {
+        flex-wrap: wrap;
+    }
+
+    .parish-faq-page-numbers {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 8px;
+    }
+}
